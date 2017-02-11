@@ -31,7 +31,7 @@ public class mapPanelTest {
 	public void testKeyPressed1() {
 	e=new KeyEvent(new Button("click"), 1, 20, 1, KeyEvent.VK_DOWN);
 	testPanel.keyPressed(e);
-	assertEquals(testPanel.interval, 100);
+	assertEquals(testPanel.getInterval(), 100);
 	
 	}
 	@Test

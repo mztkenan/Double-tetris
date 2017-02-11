@@ -73,10 +73,7 @@ public class test extends JFrame implements ActionListener{
             control.pause.addActionListener(this);
             control.restart.addActionListener(this);
             control.back.addActionListener(this);
-            control.exit.addActionListener(this);
-         
-    		
-            
+            control.exit.addActionListener(this);  
 		}
 
 		
@@ -87,9 +84,7 @@ public class test extends JFrame implements ActionListener{
 			testFrame.setSize(800,600);
 			testFrame.setVisible(true);
 			testFrame.setResizable(false);
-			testFrame.setTitle("史上最牛俄罗斯方块");
-			
-			
+			testFrame.setTitle("史上最牛俄罗斯方块");	
 		}
 	   
 		
@@ -101,7 +96,6 @@ public class test extends JFrame implements ActionListener{
 			if(e.getSource()==start.preferenceButton){
 				remove(start);
 				con.add(preference);
-				
 			}
 			if (e.getSource()==start.helpButton){ 
 				remove(start);
@@ -129,22 +123,19 @@ public class test extends JFrame implements ActionListener{
                 //开始线程
                 t=new Thread(playMap);
                 t.start();
-                playMap.requestFocus();
-                
+                playMap.requestFocus(); 
 			}
 			if (e.getSource()==model.coupleButton) {
                 remove(model);
                 playMap=new mapPanel(0,this);
-               
-                
+ 
                 setLayout(bLayout);
                 add(new JLabel("                         "), BorderLayout.WEST);
                 add(new JLabel("    "), BorderLayout.EAST);
                 add(new JLabel("    \n  "), BorderLayout.NORTH);
                 add(control,BorderLayout.SOUTH);
                 add(playMap,BorderLayout.CENTER);
-                
-              
+                 
             	playMap.addKeyListener(playMap);
                 //开始线程
                 t=new Thread(playMap);
@@ -199,14 +190,15 @@ public class test extends JFrame implements ActionListener{
 				con.add(start); 
 			}
             if (e.getSource()==control.pause) {
-    			
+            	playMap.setPause(true);
     		}
     		if (e.getSource()==control.restart) {
-    			
+    			playMap.setPause(false);
     		}
     		if (e.getSource()==control.back) {
+    			playMap.setPause(true);
     			con.removeAll();
-    			
+    		
     			con.add(start); 
    			 validate();//刷新所有组件
    			 repaint();//重新绘制

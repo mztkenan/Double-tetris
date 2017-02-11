@@ -16,7 +16,7 @@ public class PlayControl extends JPanel {
 	   JLabel score1=new JLabel("玩家1");
 	   JLabel score2=new JLabel("玩家2");
 	   CustomButton pause=new CustomButton("暂停");
-	   CustomButton restart = new CustomButton("重玩");
+	   CustomButton restart = new CustomButton("继续");
 	   CustomButton back=new CustomButton("主菜单");
 	   CustomButton exit = new CustomButton("退出游戏");
 	   test _testFrame;

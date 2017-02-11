@@ -29,7 +29,6 @@ public class CustomButton extends JButton implements MouseListener{
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -41,7 +40,8 @@ public class CustomButton extends JButton implements MouseListener{
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+		imageIcon=new ImageIcon("button1.png");
+		setIcon(imageIcon);
 	}
 
 	@Override
